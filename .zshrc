@@ -256,3 +256,15 @@ fi
 if [ -f /etc/zsh_command_not_found ]; then
     . /etc/zsh_command_not_found
 fi
+eval "$(zoxide init zsh)"
+alias cd='z'
+alias cdd='z ~'
+alias ff='fzf --preview "batcat --color=always --style=numbers --line-range=:500 {}"'
+alias cat='batcat'
+alias bathelp='batcat --plain --language=help'
+help() {
+  "$@" --help 2>&1 | bathelp
+}
+chpwd(){
+    ls
+}
