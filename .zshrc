@@ -28,6 +28,8 @@ bindkey '^[[6~' end-of-buffer-or-history          # page down
 bindkey '^[[H' beginning-of-line                  # home
 bindkey '^[[F' end-of-line                        # end
 bindkey '^[[Z' undo                               # shift + tab undo last action
+autoload -Uz edit-command-line
+zle -N edit-command-line
 bindkey '^x^e' edit-command-line                  # edit command line
 
 # enable completion features
